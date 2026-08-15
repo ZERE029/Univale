@@ -31,7 +31,7 @@ def validar_cpf(cpf: str) -> bool:
 
 
 ### FUNÇÃO RESPONSÁVEL POR CADASTRAR O CLIENTE APÓS NORMALIZAR E VALIDAR O CPF ###
-def cadastrar_cliente(cpf: str) -> str:
+def cadastrar_cliente(cpf: str) -> str:  
     """
     Args:
         cpf (str): CPF do cliente que será cadastrado.
@@ -48,3 +48,5 @@ def cadastrar_cliente(cpf: str) -> str:
         raise ValueError("CPF inválido")
 
     return cpf
+
+#def
