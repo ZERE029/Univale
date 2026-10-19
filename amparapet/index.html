@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AmparaPet – Encontre seu novo melhor amigo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="AmparaPet">
+      <img src="img/logo-icone.png" alt="">
+      <span>Ampara<b>Pet</b></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a class="nav__link is-active" href="#inicio">Início</a>
+      <a class="nav__link" href="#como-adotar">Como adotar</a>
+      <a class="nav__link" href="#contato">Contato</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn" id="btnBusca" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a class="btn btn--sm" href="#animais"><i class="fa-solid fa-paw"></i> Ver animais</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero__text">
+        <h1>Encontre seu novo melhor amigo <i class="fa-regular fa-heart"></i></h1>
+        <p>Adote um animal e transforme duas vidas:<br>a dele e a sua.</p>
+        <a class="btn btn--xs" href="#animais"><i class="fa-solid fa-paw"></i> Ver animais disponíveis <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <img class="hero__img" src="img/hero-animais.png" alt="Cães e gatos disponíveis para adoção">
+    </section>
+
+    <section class="filters" aria-label="Filtros">
+      <label class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="busca" placeholder="Buscar por nome, raça ou palavra-chave...">
+      </label>
+
+      <div class="chips" data-group="especie">
+        <button class="chip chip--pill is-active" data-value="todos"><i class="fa-solid fa-paw"></i> Todos</button>
+        <button class="chip chip--pill chip--outline" data-value="cachorro"><i class="fa-solid fa-dog"></i> Cachorros</button>
+        <button class="chip chip--pill chip--outline" data-value="gato"><i class="fa-solid fa-cat"></i> Gatos</button>
+      </div>
+
+      <div class="chips chips--porte" data-group="porte">
+        <span class="chips__label">Porte:</span>
+        <button class="chip chip--outline" data-value="pequeno">Pequeno</button>
+        <button class="chip chip--outline" data-value="medio">Médio</button>
+        <button class="chip chip--outline" data-value="grande">Grande</button>
+      </div>
+
+      <div class="filters__row2">
+        <button class="chip chip--gray" id="fCastrado" aria-pressed="false">Castrado</button>
+        <button class="chip chip--gray" id="fVacinado" aria-pressed="false">Vacinado</button>
+        <button class="clear" id="limpar">Limpar filtros <i class="fa-solid fa-rotate"></i></button>
+      </div>
+    </section>
+
+    <section class="animals" id="animais">
+      <div class="animals__head">
+        <h2>Animais disponíveis:</h2>
+        <a href="#animais" id="verTodos">ver todos <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="vazio" hidden>Nenhum animal encontrado com esses filtros.</p>
+    </section>
+
+    <section class="adopt" id="como-adotar">
+      <h2>Como Adotar?</h2>
+      <p class="adopt__sub">É simples! veja como funciona o processo de adoção:</p>
+      <div class="steps">
+        <div class="step">
+          <i class="fa-solid fa-paw"></i>
+          <h3>1. Escolha um animal</h3>
+          <p>Navegue pela nossa lista e encontre seu companheiro</p>
+        </div>
+        <i class="fa-solid fa-arrow-right step__arrow"></i>
+        <div class="step">
+          <i class="fa-brands fa-whatsapp"></i>
+          <h3>2. Entre em contato</h3>
+          <p>Fale conosco pelo Whatsapp para demonstrar interesse</p>
+        </div>
+        <i class="fa-solid fa-arrow-right step__arrow"></i>
+        <div class="step">
+          <i class="fa-solid fa-house"></i>
+          <h3>3. Agende uma visita</h3>
+          <p>Conheça o animal e tire todas as suas dúvidas</p>
+        </div>
+        <i class="fa-solid fa-arrow-right step__arrow"></i>
+        <div class="step">
+          <i class="fa-solid fa-heart"></i>
+          <h3>4. Finalize a adoção</h3>
+          <p>Com a documentação em dia, o novo membro da família pode ir para casa!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contato">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="img/logo-rodape.png" alt="">
+          <span>Ampara<b>Pet</b></span>
+        </div>
+        <p>Mais amor, menos abandono.</p>
+      </div>
+
+      <div class="footer__col footer__col--addr">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <strong>Endereço do abrigo:</strong>
+          <p>Rua A 300, Centro<br>Ivaiporã - PR</p>
+        </div>
+      </div>
+
+      <div class="footer__col footer__col--contact">
+        <strong>Contato:</strong>
+        <a href="https://wa.me/5543999140918" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (43) 99914-0918</a>
+        <a href="mailto:tocadeassis.ivp@hotmail.com"><i class="fa-regular fa-envelope"></i> tocadeassis.ivp@hotmail.com</a>
+      </div>
+
+      <div class="footer__col footer__col--social">
+        <strong>Siga-nos</strong>
+        <div class="social">
+          <a href="https://wa.me/5543999140918" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="modal">
+    <form method="dialog">
+      <h3 id="mNome"></h3>
+      <ul id="mInfo"></ul>
+      <button class="btn btn--sm">Fechar</button>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

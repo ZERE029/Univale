@@ -1,0 +1,171 @@
+:root {
+  --green: #4bae4f;
+  --green-dark: #234e3f;
+  --hero-bg: #f3ff96;
+  --panel: #f7f7f5;
+  --gray-chip: #ececec;
+  --text-muted: #5f6b66;
+  --font: "Poppins", system-ui, sans-serif; /* troque aqui se a fonte do Figma for outra */
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--green-dark); background: #fff; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; }
+
+/* Botões */
+.btn { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; border: 0; font-weight: 600; border-radius: 8px; }
+.btn--sm { padding: 8px 14px; font-size: 13px; }
+.btn--xs { padding: 10px 12px; font-size: 11px; font-weight: 700; gap: 6px; }
+
+/* Header */
+.header { height: 143px; padding: 0 clamp(16px, 12vw, 213px) 0 clamp(16px, 12vw, 213px); display: flex; align-items: center; justify-content: space-between; gap: 24px; position: relative; }
+.logo { display: flex; align-items: center; gap: 8px; font-size: 33px; font-weight: 700; color: var(--green-dark); }
+.logo img { height: 58px; }
+.logo b { color: var(--green); font-weight: 700; }
+.nav { display: flex; gap: 46px; font-size: 13px; font-weight: 600; margin-left: auto; margin-right: auto; }
+.nav__link { padding: 14px 0 12px; border-bottom: 2px solid transparent; }
+.nav__link.is-active { color: var(--green); border-color: var(--green); }
+.header__actions { display: flex; align-items: center; gap: 22px; }
+.icon-btn { width: 70px; height: 46px; border: 0; border-radius: 23px; background: #f1f1f1; color: #555; font-size: 20px; }
+.menu-toggle { display: none; background: none; border: 0; font-size: 24px; color: var(--green-dark); }
+
+/* Hero */
+.hero { background: var(--hero-bg); height: 229px; padding-left: clamp(16px, 3.5vw, 61px); display: flex; align-items: flex-end; justify-content: space-between; overflow: hidden; }
+.hero__text { align-self: center; max-width: 340px; flex-shrink: 0; }
+.hero h1 { font-size: 33px; line-height: 1.45; font-weight: 800; margin-bottom: 4px; }
+.hero h1 i { font-size: 26px; color: var(--green); font-weight: 400; }
+.hero p { font-size: 11.5px; font-weight: 600; line-height: 1.6; margin-bottom: 18px; }
+.hero__img { height: 136px; max-width: 70%; object-fit: contain; object-position: right bottom; margin: 0 auto 0 0; align-self: flex-end; }
+
+/* Filtros */
+.filters { max-width: 1262px; margin: 40px auto 0; background: var(--panel); border-radius: 24px; padding: 20px 26px 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.search { flex: 0 1 352px; display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px; border: 1px solid #555; border-radius: 4px; background: #fff; color: #666; }
+.search input { border: 0; outline: 0; width: 100%; font: 400 12px var(--font); background: transparent; }
+.chips { display: flex; align-items: center; gap: 12px; }
+.chips--porte { margin-left: auto; }
+.chips__label { font-weight: 700; font-size: 14px; color: var(--text-muted); margin-right: 2px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid transparent; background: transparent; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 20px; }
+.chip--pill { height: 38px; padding: 0 24px; font-size: 14px; font-weight: 700; }
+.chip--outline { border-color: #333; background: #fff; color: var(--text-muted); }
+.chip--pill.chip--outline { color: #111; }
+.chip.is-active { background: var(--green); border-color: var(--green); color: #fff; }
+.chip--gray { background: var(--gray-chip); padding: 8px 25px; font-weight: 700; }
+.chip--gray[aria-pressed="true"] { background: var(--green); color: #fff; }
+.filters__row2 { flex: 1 0 100%; display: flex; align-items: center; gap: 28px; padding-left: 48px; }
+.clear { background: none; border: 0; font-size: 13px; font-weight: 700; color: var(--green-dark); }
+.clear i { color: #777; font-size: 11px; }
+
+/* Lista de animais */
+.animals { max-width: 1404px; margin: 0 auto; padding: 0 20px 60px; }
+.animals__head { display: flex; align-items: center; justify-content: space-between; padding: 40px 39px 100px; }
+.animals h2 { font-size: 33px; font-weight: 700; }
+.animals__head a { font-size: 12px; font-weight: 700; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 76px; }
+.card { display: flex; flex-direction: column; border: 1px solid #ececec; border-radius: 44px 44px 40px 40px; overflow: hidden; background: #fff; min-height: 360px; }
+.card__photo { position: relative; height: 187px; }
+.card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.badge { position: absolute; top: 20px; right: 4px; display: inline-flex; align-items: center; gap: 4px; background: var(--green); color: #fff; font-size: 8px; font-weight: 700; padding: 4px 8px; border-radius: 10px; }
+.badge--processo { background: #ffc107; }
+.card__body { padding: 12px 11px 0; flex: 1; display: flex; flex-direction: column; }
+.card__name { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.card__meta, .card__health { display: flex; align-items: center; gap: 14px; font-size: 10px; color: var(--text-muted); margin-bottom: 10px; padding-left: 2px; }
+.card__meta i { margin-right: 5px; }
+.card__meta .sep { width: 3px; height: 3px; background: #666; border-radius: 50%; margin: 0 -2px; }
+.card__health span { display: inline-flex; align-items: center; gap: 5px; }
+.card__health .ok { color: var(--green); font-size: 12px; }
+.card__health .no { color: #e53935; font-size: 12px; }
+.card__btn { margin: auto auto 24px; width: 172px; height: 31px; border: 1.5px solid var(--green); background: #fff; color: var(--green); border-radius: 5px; font-size: 13px; font-weight: 700; }
+.card__btn:hover { background: var(--green); color: #fff; }
+.empty { text-align: center; color: var(--text-muted); padding: 40px 0; }
+
+/* Modal */
+.modal { border: 0; border-radius: 20px; padding: 28px 32px; min-width: 280px; box-shadow: 0 10px 40px rgba(0,0,0,.2); }
+.modal::backdrop { background: rgba(0,0,0,.4); }
+.modal h3 { font-size: 22px; margin-bottom: 12px; }
+.modal ul { list-style: none; padding: 0; margin-bottom: 20px; font-size: 14px; line-height: 1.9; }
+
+.animals { padding-bottom: 130px; }
+
+/* Como adotar */
+.adopt { background: var(--panel); text-align: center; padding: 14px 20px 12px; }
+.adopt h2 { font-size: 26px; font-weight: 700; }
+.adopt__sub { font-size: 13px; font-weight: 500; margin: 6px 0 30px; }
+.steps { display: flex; justify-content: center; align-items: flex-start; gap: 34px; flex-wrap: wrap; }
+.step { width: 200px; }
+.step > i { font-size: 38px; color: #1f5a3a; margin-bottom: 14px; display: block; height: 40px; }
+.step h3 { font-size: 16.5px; font-weight: 700; margin-bottom: 6px; }
+.step p { font-size: 11.5px; font-weight: 500; line-height: 1.5; max-width: 190px; margin: 0 auto; }
+.step__arrow { color: #0a6b1f; font-size: 18px; margin-top: 12px; }
+
+/* Rodapé */
+.footer { background: var(--green-dark); color: #fff; }
+.footer__inner { max-width: 1320px; margin: 0 auto; padding: 0 20px; min-height: 144px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.footer__logo { display: flex; align-items: center; gap: 12px; font-size: 32px; font-weight: 700; }
+.footer__logo img { height: 58px; }
+.footer__logo b { color: var(--green); }
+.footer__brand p { font-size: 11px; margin: 0 0 0 70px; }
+.footer__col { font-size: 11.5px; line-height: 1.6; }
+.footer__col strong { display: block; font-size: 12px; font-weight: 500; }
+.footer__col p { font-size: 11px; }
+.footer__col a { display: block; }
+.footer__col i { font-size: 13px; }
+.footer__col--addr { display: flex; gap: 14px; align-items: flex-start; }
+.footer__col--addr > i { font-size: 20px; margin-top: 2px; }
+.footer__col--contact strong { padding-left: 18px; margin-bottom: 4px; }
+.social { display: flex; gap: 14px; margin-top: 6px; }
+.social i { font-size: 20px; }
+
+/* Responsividade */
+@media (max-width: 1280px) { .grid { gap: 32px; } .chips--porte { margin-left: 0; } }
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .nav { gap: 28px; }
+  .animals__head { padding-bottom: 48px; }
+}
+@media (max-width: 760px) {
+  .header { height: 84px; }
+  .logo { font-size: 24px; } .logo img { height: 42px; }
+  .menu-toggle { display: block; }
+  .header__actions .btn, .icon-btn { display: none; }
+  .nav { display: none; position: absolute; top: 84px; left: 0; right: 0; flex-direction: column; gap: 0; background: #fff; padding: 8px 24px 16px; box-shadow: 0 8px 16px rgba(0,0,0,.08); z-index: 5; }
+  .nav.is-open { display: flex; }
+  .nav__link { padding: 12px 0; border-bottom: 0; }
+  .hero { height: auto; flex-direction: column; align-items: flex-start; padding: 28px 16px 0; }
+  .hero h1 { font-size: 26px; }
+  .hero__img { max-width: 100%; height: auto; width: 100%; margin-top: 16px; }
+  .filters { margin: 24px 16px 0; padding: 16px; }
+  .search { flex-basis: 100%; }
+  .chips { flex-wrap: wrap; }
+  .chip--pill { padding: 0 16px; }
+  .filters__row2 { padding-left: 0; flex-wrap: wrap; gap: 12px; }
+  .animals { padding: 0 16px 40px; }
+  .animals__head { padding: 28px 0 28px; }
+  .animals h2 { font-size: 24px; }
+  .grid { grid-template-columns: 1fr; gap: 14px; }
+  /* Cards em linha: foto à esquerda, dados à direita (estilo lista de marketplace) */
+  .card { flex-direction: row; min-height: 0; border-radius: 20px; }
+  .card__photo { flex: 0 0 40%; height: auto; min-height: 150px; }
+  .card__photo img { position: absolute; inset: 0; }
+  .badge { top: 8px; right: auto; left: 8px; }
+  .card__body { padding: 12px 14px; }
+  .card__name { margin-bottom: 6px; }
+  .card__meta, .card__health { flex-wrap: wrap; gap: 4px 10px; margin-bottom: 8px; }
+  .card__btn { margin: auto 0 0; width: 100%; max-width: 160px; height: 30px; }
+}
+
+/* Responsividade: Como adotar e rodapé */
+@media (max-width: 1024px) {
+  .animals { padding-bottom: 80px; }
+  .step__arrow { display: none; }
+  .steps { gap: 28px 40px; }
+  .footer__inner { padding: 28px 24px; justify-content: flex-start; gap: 28px 48px; }
+}
+@media (max-width: 760px) {
+  .animals { padding-bottom: 40px; }
+  .adopt { padding: 28px 16px 24px; }
+  .adopt h2 { font-size: 22px; }
+  .step { width: 100%; }
+  .footer__inner { flex-direction: column; align-items: flex-start; padding: 28px 16px; }
+  .footer__logo { font-size: 28px; }
+}
