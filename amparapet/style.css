@@ -61,8 +61,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .animals__head { display: flex; align-items: center; justify-content: space-between; padding: 40px 39px 100px; }
 .animals h2 { font-size: 33px; font-weight: 700; }
 .animals__head a { font-size: 12px; font-weight: 700; }
-.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 76px; }
-.card { display: flex; flex-direction: column; border: 1px solid #ececec; border-radius: 44px 44px 40px 40px; overflow: hidden; background: #fff; min-height: 360px; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 76px; }
+.card { display: flex; flex-direction: column; min-width: 0; border: 1px solid #ececec; border-radius: 44px 44px 40px 40px; overflow: hidden; background: #fff; min-height: 360px; }
 .card__photo { position: relative; height: 187px; }
 .card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .badge { position: absolute; top: 20px; right: 4px; display: inline-flex; align-items: center; gap: 4px; background: var(--green); color: #fff; font-size: 8px; font-weight: 700; padding: 4px 8px; border-radius: 10px; }
@@ -75,7 +75,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .card__health span { display: inline-flex; align-items: center; gap: 5px; }
 .card__health .ok { color: var(--green); font-size: 12px; }
 .card__health .no { color: #e53935; font-size: 12px; }
-.card__btn { margin: auto auto 24px; width: 172px; height: 31px; border: 1.5px solid var(--green); background: #fff; color: var(--green); border-radius: 5px; font-size: 13px; font-weight: 700; }
+.card__btn { margin: auto auto 24px; width: 100%; max-width: 172px; height: 31px; border: 1.5px solid var(--green); background: #fff; color: var(--green); border-radius: 5px; font-size: 13px; font-weight: 700; }
 .card__btn:hover { background: var(--green); color: #fff; }
 .empty { text-align: center; color: var(--text-muted); padding: 40px 0; }
 
@@ -119,7 +119,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* Responsividade */
 @media (max-width: 1280px) { .grid { gap: 32px; } .chips--porte { margin-left: 0; } }
 @media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   .nav { gap: 28px; }
   .animals__head { padding-bottom: 48px; }
 }
@@ -142,16 +142,28 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .animals { padding: 0 16px 40px; }
   .animals__head { padding: 28px 0 28px; }
   .animals h2 { font-size: 24px; }
-  .grid { grid-template-columns: 1fr; gap: 14px; }
-  /* Cards em linha: foto à esquerda, dados à direita (estilo lista de marketplace) */
-  .card { flex-direction: row; min-height: 0; border-radius: 20px; }
-  .card__photo { flex: 0 0 40%; height: auto; min-height: 150px; }
+  /* 2 colunas lado a lado (estilo grade de produtos de marketplace) */
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card { min-height: 0; border-radius: 20px; }
+  .card__photo { height: auto; aspect-ratio: 4 / 3; }
   .card__photo img { position: absolute; inset: 0; }
   .badge { top: 8px; right: auto; left: 8px; }
-  .card__body { padding: 12px 14px; }
-  .card__name { margin-bottom: 6px; }
-  .card__meta, .card__health { flex-wrap: wrap; gap: 4px 10px; margin-bottom: 8px; }
-  .card__btn { margin: auto 0 0; width: 100%; max-width: 160px; height: 30px; }
+  .card__body { padding: 10px 10px 12px; }
+  .card__name { font-size: 14px; margin-bottom: 6px; overflow-wrap: anywhere; }
+  /* Empilha as informações para nada ser cortado em cards estreitos */
+  .card__meta, .card__health { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 8px; padding-left: 0; }
+  .card__meta .sep { display: none; }
+  .card__btn { margin: auto 0 0; width: 100%; max-width: none; height: 32px; font-size: 12px; }
+}
+
+/* Telas muito estreitas (até 360px): margens e textos um pouco menores */
+@media (max-width: 360px) {
+  .animals { padding-left: 12px; padding-right: 12px; }
+  .grid { gap: 10px; }
+  .card { border-radius: 16px; }
+  .card__body { padding: 8px 8px 10px; }
+  .card__name { font-size: 13px; }
+  .card__btn { height: 30px; font-size: 11px; }
 }
 
 /* Responsividade: Como adotar e rodapé */

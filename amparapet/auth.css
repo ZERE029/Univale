@@ -1,0 +1,60 @@
+/* Telas de login e cadastro — usar junto com style.css (cores, fonte, .btn, .logo) */
+.auth { min-height: 100vh; background: var(--panel); }
+.auth__wrap { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+
+/* Lado esquerdo: boas-vindas */
+.auth__side { background: var(--hero-bg); padding: 40px clamp(24px, 5vw, 72px) 0; display: flex; flex-direction: column; gap: 20px; overflow: hidden; }
+.auth__side h1 { font-size: clamp(26px, 3vw, 38px); font-weight: 800; line-height: 1.3; }
+.auth__side h1 i { color: var(--green); font-size: .75em; font-weight: 400; }
+.auth__side p { font-size: 14px; font-weight: 500; line-height: 1.7; max-width: 380px; }
+.auth__perks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 13px; font-weight: 600; }
+.auth__perks i { color: var(--green); margin-right: 8px; }
+.auth__img { margin-top: auto; width: 100%; max-height: 240px; object-fit: contain; object-position: left bottom; }
+
+/* Lado direito: formulário */
+.auth__panel { display: flex; align-items: center; justify-content: center; padding: 32px 20px; }
+.form { width: 100%; max-width: 440px; background: #fff; border: 1px solid #ececec; border-radius: 24px; padding: 32px; display: grid; gap: 16px; }
+.form h2 { font-size: 26px; font-weight: 700; }
+.form__sub { font-size: 13px; color: var(--text-muted); margin-top: -8px; }
+.back { font-size: 12px; font-weight: 600; color: var(--text-muted); width: fit-content; }
+.back:hover, .link:hover { text-decoration: underline; }
+.link { color: var(--green); font-weight: 700; }
+
+.field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.input { display: flex; align-items: center; gap: 10px; height: 46px; padding: 0 14px; border: 1.5px solid #cfd6d2; border-radius: 12px; color: var(--text-muted); transition: border-color .15s, box-shadow .15s; }
+.input:focus-within { border-color: var(--green); box-shadow: 0 0 0 3px rgba(75, 174, 79, .18); }
+.input input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 500 16px var(--font); color: var(--green-dark); } /* 16px evita zoom automático no iPhone */
+.input input::placeholder { color: #9aa5a0; font-weight: 400; }
+.toggle-pass { border: 0; background: none; color: inherit; padding: 4px; }
+.field.is-invalid .input { border-color: #e53935; }
+.error { display: block; color: #e53935; font-size: 12px; font-weight: 500; margin-top: 4px; }
+.error:empty { display: none; }
+
+.forca { display: flex; gap: 4px; margin-top: 8px; --c: #e3e8e5; }
+.forca[data-n="1"] { --c: #e53935; } .forca[data-n="2"] { --c: #ffc107; } .forca[data-n="3"], .forca[data-n="4"] { --c: var(--green); }
+.forca span { flex: 1; height: 4px; border-radius: 2px; background: #e3e8e5; transition: background .2s; }
+.forca span.on { background: var(--c); }
+.forca__txt { display: block; font-size: 11px; color: var(--text-muted); margin-top: 4px; min-height: 14px; }
+
+.field .check, .check { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; line-height: 1.5; }
+.field .check { font-weight: 500; margin-bottom: 0; }
+.check input { accent-color: var(--green); width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; }
+.form__row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; }
+.btn--block { width: 100%; justify-content: center; padding: 14px; font-size: 14px; border-radius: 12px; }
+.btn[disabled] { opacity: .7; cursor: wait; }
+.form__foot { text-align: center; font-size: 13px; }
+.auth__help { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); max-width: calc(100% - 32px); background: var(--green-dark); color: #fff; padding: 12px 18px; border-radius: 12px; font-size: 13px; font-weight: 600; opacity: 0; pointer-events: none; transition: .25s; z-index: 10; }
+.toast.is-show { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Tablet e celular: boas-vindas vira uma faixa no topo */
+@media (max-width: 900px) {
+  .auth__wrap { grid-template-columns: 1fr; min-height: 0; }
+  .auth__side { padding: 20px 20px 24px; gap: 8px; }
+  .auth__side h1 { font-size: 24px; }
+  .auth__side p, .auth__perks, .auth__img { display: none; }
+  .auth__panel { padding: 20px 16px 40px; }
+  .form { padding: 24px 18px; border-radius: 20px; }
+}

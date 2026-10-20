@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar conta – AmparaPet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="auth.css?v=1">
+</head>
+<body class="auth">
+  <div class="auth__wrap">
+    <aside class="auth__side">
+      <a class="logo" href="index.html" aria-label="AmparaPet">
+        <img src="img/logo-icone.png" alt="">
+        <span>Ampara<b>Pet</b></span>
+      </a>
+      <h1>Crie sua conta e comece a adotar <i class="fa-regular fa-heart"></i></h1>
+      <p>Leva menos de um minuto. Com a conta, você acompanha cada etapa da adoção.</p>
+      <ul class="auth__perks">
+        <li><i class="fa-solid fa-paw"></i>Acompanhe seus pedidos de adoção</li>
+        <li><i class="fa-solid fa-heart"></i>Guarde seus animais favoritos</li>
+        <li><i class="fa-brands fa-whatsapp"></i>Fale direto com o abrigo</li>
+      </ul>
+      <img class="auth__img" src="img/Cadastro de Pets com Recepcionista Canino.png" alt="">
+    </aside>
+
+    <main class="auth__panel">
+      <form class="form" id="form" data-modo="cadastro" novalidate>
+        <a class="back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Voltar ao início</a>
+        <h2>Criar conta</h2>
+        <p class="form__sub">Preencha seus dados para se cadastrar.</p>
+
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <div class="input"><i class="fa-regular fa-user"></i>
+            <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Maria da Silva" data-rule="nome">
+          </div>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <div class="input"><i class="fa-regular fa-envelope"></i>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" data-rule="email">
+          </div>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="telefone">WhatsApp</label>
+          <div class="input"><i class="fa-brands fa-whatsapp"></i>
+            <input id="telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(43) 99999-9999" data-rule="telefone">
+          </div>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="senha">Senha</label>
+          <div class="input"><i class="fa-solid fa-lock"></i>
+            <input id="senha" name="senha" type="password" autocomplete="new-password" placeholder="Mínimo de 8 caracteres" data-rule="senha">
+            <button class="toggle-pass" type="button" data-target="senha" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <div class="forca" id="forca" data-n="0"><span></span><span></span><span></span><span></span></div>
+          <small class="forca__txt" id="forcaTxt"></small>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="confirma">Confirmar senha</label>
+          <div class="input"><i class="fa-solid fa-lock"></i>
+            <input id="confirma" name="confirma" type="password" autocomplete="new-password" placeholder="Repita a senha" data-rule="confirma">
+            <button class="toggle-pass" type="button" data-target="confirma" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label class="check"><input type="checkbox" name="termos" data-rule="termos"> <span>Li e aceito os <a class="link" href="#">termos de uso</a> e a <a class="link" href="#">política de privacidade</a>.</span></label>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <button class="btn btn--block" type="submit">Criar conta</button>
+        <p class="form__foot">Já tem conta? <a class="link" href="login.html">Entrar</a></p>
+      </form>
+    </main>
+  </div>
+  <script src="auth.js?v=1"></script>
+</body>
+</html>

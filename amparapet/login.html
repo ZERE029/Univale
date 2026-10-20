@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar – AmparaPet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="auth.css?v=1">
+</head>
+<body class="auth">
+  <div class="auth__wrap">
+    <aside class="auth__side">
+      <a class="logo" href="index.html" aria-label="AmparaPet">
+        <img src="img/logo-icone.png" alt="">
+        <span>Ampara<b>Pet</b></span>
+      </a>
+      <h1>Bem-vindo de volta <i class="fa-regular fa-heart"></i></h1>
+      <p>Entre na sua conta para continuar de onde parou e ajudar mais um amigo a encontrar um lar.</p>
+      <ul class="auth__perks">
+        <li><i class="fa-solid fa-paw"></i>Acompanhe seus pedidos de adoção</li>
+        <li><i class="fa-solid fa-heart"></i>Guarde seus animais favoritos</li>
+        <li><i class="fa-brands fa-whatsapp"></i>Fale direto com o abrigo</li>
+      </ul>
+      <img class="auth__img" src="img/hero-animais.png" alt="">
+    </aside>
+
+    <main class="auth__panel">
+      <form class="form" id="form" data-modo="login" novalidate>
+        <a class="back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Voltar ao início</a>
+        <h2>Entrar</h2>
+        <p class="form__sub">Use seu e-mail e senha para acessar sua conta.</p>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <div class="input"><i class="fa-regular fa-envelope"></i>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" data-rule="email">
+          </div>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="senha">Senha</label>
+          <div class="input"><i class="fa-solid fa-lock"></i>
+            <input id="senha" name="senha" type="password" autocomplete="current-password" placeholder="Sua senha" data-rule="senhaLogin">
+            <button class="toggle-pass" type="button" data-target="senha" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="form__row">
+          <label class="check"><input type="checkbox" name="lembrar"> Lembrar de mim</label>
+          <a class="link" href="#">Esqueci a senha</a>
+        </div>
+
+        <button class="btn btn--block" type="submit">Entrar</button>
+        <p class="form__foot">Ainda não tem conta? <a class="link" href="cadastro.html">Cadastre-se</a></p>
+        <p class="auth__help">Precisa de ajuda? <a class="link" href="https://wa.me/5543999140918" target="_blank" rel="noopener">Chame no WhatsApp</a></p>
+      </form>
+    </main>
+  </div>
+  <script src="auth.js?v=1"></script>
+</body>
+</html>
